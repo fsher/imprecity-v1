@@ -1,0 +1,24 @@
+{
+  "name": "urban",
+  "version": "1.0.0",
+  "description": "Urban website backend",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "build:prod": "webpack -p"
+  },
+  "author": "Filipp Sher",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "interact.js": "^1.2.8",
+    "jquery": "^3.2.1"
+  }
+}

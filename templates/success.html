@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+</head>
+<body>
+    {% csrf_token %}
+    <div class="wrap">
+        <div class="wrap__map"></div>
+        <div class="wrap__search-box">
+            <input type="search" class="wrap__search" placeholder="Поиск..." title="">
+            <input type="button" class="wrap__search-button" value="Найти">
+        </div>
+        <div class="wrap__sidebar">
+            <div class="wrap__sidebar-user">
+                <img src="{{ profile.get_img }}" class="wrap__sidebar-user-img" alt="">
+                <div class="wrap__sidebar-user-name">{{ user.first_name }} {{ user.last_name }}</div>
+            </div>
+            <div class="wrap__sidebar-content"></div>
+
+            <div class="wrap__sidebar-bottom">
+                <a class="wrap__sidebar-link" href="/analytics">
+                    <div class="wrap__sidebar-link-tooltip">Общая тепловая карта</div>
+                    <img class="wrap__sidebar-link-img" src="/static/img/general_heatmap.svg" alt="">
+                </a>
+                <a class="wrap__sidebar-logout" href="/api/logout"><img class="wrap__sidebar-link-img--logout" src="/static/img/logout.png" alt=""></a>
+            </div>
+
+        </div>
+
+
+        <!--<div class="wrap__legend wrap__legend--horizontal"><div class="wrap__legend-items--horizontal"></div></div> -->
+        <div class="wrap__loader"><div></div></div>
+    </div>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAePaLEGbeeQGCHht2QsMF3swh9o-Onfc0&libraries=visualization"></script>
+    <script src="/static/markerclusterer.js"></script>
+    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+    <script src="/static/common.js"></script>
+    <script src="/static/success.js"></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59baa1facccf6189"></script> -->
+</body>
+</html>

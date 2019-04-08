@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap__map"></div>
+        <!--<a href="/" class="wrap__link wrap__link--back">Назад</a> -->
+        <a href="/" class="wrap__link wrap__link--back"></a>
+        <div class="wrap__search-box wrap__search-box--less-width">
+            <input type="search" class="wrap__search" placeholder="Поиск..." title="">
+            <input type="button" class="wrap__search-button" value="Найти">
+        </div>
+
+        <div class="wrap__legend">
+            <div class="wrap__legend-items"></div>
+            <div class="wrap__legend-toggle">
+                <img class = "wrap__legend-toggle--arrow" src='/static/img/arrow.png'>
+            </div>
+        <div class="wrap__loader"><div></div></div>
+
+    </div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAePaLEGbeeQGCHht2QsMF3swh9o-Onfc0&libraries=visualization"></script>
+    <script src="/static/markerclusterer.js"></script>
+    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+    <script src="/static/common.js"></script>
+    <script src="/static/analytics.js"></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59baa1facccf6189"></script> -->
+    <script jquery.js?rand=234234></script>
+</body>
+</html>

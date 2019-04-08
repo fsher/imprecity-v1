@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <style>
+    </style>
+
+</head>
+<body id="main_body">
+    <div class="wrap">
+{#        <div class="wrap__map"></div>#}
+        <video class="wrap__background-video" src="/static/other/bg.webm" loop autoplay="autoplay" preload="none"></video>
+
+        <div class="wrap__welcome-box">
+            <div class="wrap__welcome-box-inner">
+                <h1 class="wrap__welcome-box-header">Imprecity</h1>
+                <h3 class="wrap__welcome-box-subheader">Добро пожаловать!</h3>
+                <div class="wrap__welcome-box-text">
+                    <p>Перед вами интерактивный портал, на котором вы можете увидеть эмоции Петербурга.</p>
+                    <p>Что чувствует город? Чем он живет? Что чувствуете вы в этом городе?</p>
+                </div>
+                <div class="wrap__welcome-box-menu">
+                    <a class="wrap__welcome-box-menu-link wrap__welcome-box-analytics--button" href="/analytics">Посмотреть эмоции города</a>
+                    <a class="wrap__welcome-box-menu-link wrap__welcome-box-tilda--button" href="http://imprecity.tilda.ws/" target="_blank">Узнать больше о проекте</a>
+                </div>
+                <div class="wrap__welcome-box-text">
+                    <p>Войти с помощью:</p>
+                </div>
+                <div class="wrap__welcome-box-auth">
+                    
+                    <a class="wrap__welcome-box-auth-item--vk" href="{% url "social:begin" "vk-oauth2" %}">
+                        <img class="wrap__welcome-box-item-img" src="/static/img/vk_icon.png">
+                    </a>
+                    
+                    <a class="wrap__welcome-box-auth-item--google" href="{% url "social:begin" "google-oauth2" %}">
+                        <img class="wrap__welcome-box-item-img" src="/static/img/google-plus_icon.png">
+                    </a>
+                    
+                    <a class="wrap__welcome-box-auth-item--facebook" href="{% url "social:begin" "facebook" %}">
+                        <img class="wrap__welcome-box-item-img" src="/static/img/facebook_icon.png">
+                    </a>
+                    
+                    <!--
+                    <a class="wrap__welcome-box-auth-item--vk" href="{% url "social:begin" "vk-oauth2" %}">Войти с помощью VK</a>
+                    <a class="wrap__welcome-box-auth-item--google" href="{% url "social:begin" "google-oauth2" %}">Войти с помощью Google</a>
+                    -->
+                </div>
+
+            </div>
+            <div class="wrap__footer" style="color: black;"">
+                <a href="/termofuse">Пользовательское соглашение</a>
+                
+                <p>Проект создан Лабораторией качества жизни Института дизайна и урбанистики</p>
+                <p>Map data: Google maps / Иконки смайлов: Noun project</p>
+                <p>Qullab - 2018</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAePaLEGbeeQGCHht2QsMF3swh9o-Onfc0"></script>
+    <script src="/static/markerclusterer.js"></script>
+    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+    <script src="/static/common.js"></script>
+    <script src="/static/index.js"></script>
+    <script screen.lockOrientation("portrait-primary")></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59baa1facccf6189"></script> -->
+</body>
+</html>
